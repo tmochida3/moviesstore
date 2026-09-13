@@ -10,6 +10,6 @@ admin.site.register(Movie, MovieAdmin)
 class ReviewAdmin(admin.ModelAdmin):
     list_display = ['id', 'movie', 'user', 'date', 'reported']
     list_filter = ['reported']
-    search_fields = ['comment', 'movie_name', 'user_username']
+    search_fields = ['comment', 'movie__name', 'user__username']
 
 admin.site.register(Review, ReviewAdmin)

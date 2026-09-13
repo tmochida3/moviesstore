@@ -66,6 +66,7 @@ def delete_review(request, id, review_id):
 
 
 @login_required
+@require_POST
 def report_review(request, id, review_id) :
     review = get_object_or_404 (
         Review,
