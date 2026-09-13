@@ -4,5 +4,12 @@ from .models import Movie, Review
 class MovieAdmin(admin.ModelAdmin):
     ordering = ['name']
     search_fields = ['name']
+
 admin.site.register(Movie, MovieAdmin)
-admin.site.register(Review)
+
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['id', 'movie', 'user', 'date', 'reported']
+    list_filter = ['reported']
+    search_fields = ['comment', 'movie_name', 'user_username']
+
+admin.site.register(Review, ReviewAdmin)
